@@ -153,13 +153,17 @@ st.title("🗺️ Isochrone Map dari File KML")
 api_key = st.text_input("Masukkan OpenRouteService API Key:", type="password")
 range_type = st.radio("Pilih tipe jangkauan:", ["Waktu (menit)", "Jarak (meter)"])
 if range_type == "Waktu (menit)":
-    nilai_range = st.multiselect("Pilih waktu isochrone (menit):", [5, 10, 15, 20, 25, 30, 45, 60, 90, 120, 180], default=[5, 10, 15])
+    nilai_range = st.multiselect("Pilih waktu isochrone (menit):", [5, 10, 15, 20, 25, 30], default=[5, 10, 15])
     converted_range = [r * 60 for r in nilai_range]  # detik
 else:
-    nilai_range = st.multiselect("Pilih jarak isochrone (meter):", [500, 1000, 1500, 2000, 2500, 3000, 5000, 7500, 10000], default=[1000, 2000])
+    nilai_range = st.multiselect("Pilih jarak isochrone (meter):", [500, 1000, 1500, 2000, 2500, 3000], default=[1000, 2000])
     converted_range = nilai_range
 profile_list = st.multiselect("Pilih profil perjalanan:", list(COLOR_MAP.keys()), default=["driving-car", "cycling-regular", "foot-walking"])
 sampling = st.slider("Sampling Titik (semakin besar semakin ringan):", min_value=5, max_value=50, value=20, step=5)
+
+# Inisialisasi state sebelum tombol dijalankan
+if 'run_analysis' not in st.session_state:
+    st.session_state.run_analysis = False
 
 if api_key and ((input_type == "File KML" and file_kml) or (input_type == "Titik Koordinat" and coordinate_input)) and nilai_range and profile_list:
     if 'run_analysis' not in st.session_state:
@@ -232,7 +236,7 @@ if st.session_state.run_analysis:
 
         analyzer = IsochroneAnalyzer(api_key, path_kml, converted_range, profile_list, sampling_interval=sampling)
         if analyzer.load_kml():
-            analyzer.build_map()
-            analyzer.generate_isochrones()
-            analyzer.display_summary()
-            analyzer.show_map()
+                analyzer.build_map()
+                analyzer.generate_isochrones()
+                analyzer.display_summary()
+                analyzer.show_map()
