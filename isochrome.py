@@ -236,7 +236,7 @@ if st.session_state.run_analysis:
 
         analyzer = IsochroneAnalyzer(api_key, path_kml, converted_range, profile_list, sampling_interval=sampling)
         if analyzer.load_kml():
-                analyzer.build_map()
-                analyzer.generate_isochrones()
-                analyzer.display_summary()
-                analyzer.show_map()
+            analyzer.build_map()
+            analyzer.generate_isochrones()
+            analyzer.display_summary()
+            analyzer.show_map()
