@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c88592df03909d4e4df20429874fbb47 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c88592df03909d4e4df20429874fbb47" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c88592df03909d4e4df20429874fbb47 = L.map(
+                "map_c88592df03909d4e4df20429874fbb47",
+                {
+                    center: [-6.175392, 106.827153],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_718c220831cf309ce6c2e42c204486ac = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_718c220831cf309ce6c2e42c204486ac.addTo(map_c88592df03909d4e4df20429874fbb47);
+        
+    
+        function geo_json_e7db34450db45e073cd08eb007dfcd89_styler(feature) {
+            switch(feature.properties.group_index) {
+                default:
+                    return {"color": "#1a9641", "fillColor": "#1a9641", "fillOpacity": 0.4, "weight": 1};
+            }
+        }
+
+        function geo_json_e7db34450db45e073cd08eb007dfcd89_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_e7db34450db45e073cd08eb007dfcd89 = L.geoJson(null, {
+                onEachFeature: geo_json_e7db34450db45e073cd08eb007dfcd89_onEachFeature,
+            
+                style: geo_json_e7db34450db45e073cd08eb007dfcd89_styler,
+            ...{
+}
+        });
+
+        function geo_json_e7db34450db45e073cd08eb007dfcd89_add (data) {
+            geo_json_e7db34450db45e073cd08eb007dfcd89
+                .addData(data);
+        }
+            geo_json_e7db34450db45e073cd08eb007dfcd89_add({"features": [{"geometry": {"coordinates": [[[106.825008, -6.173727], [106.825474, -6.176962], [106.825545, -6.177336], [106.825797, -6.177663], [106.826623, -6.178143], [106.826656, -6.178144], [106.827606, -6.178167], [106.827635, -6.178167], [106.82855, -6.17743], [106.828794, -6.177165], [106.828862, -6.177046], [106.829421, -6.173686], [106.82923, -6.172955], [106.82895, -6.172728], [106.827579, -6.171957], [106.826931, -6.171964], [106.825271, -6.173094], [106.825018, -6.173351], [106.825008, -6.173727]]], "type": "Polygon"}, "properties": {"area": 260037.17, "center": [106.8271727, -6.1752977], "group_index": 0, "value": 300.0}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_e7db34450db45e073cd08eb007dfcd89.bindTooltip(
+                `<div>
+                     5.0 menit dari titik pusat
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_e7db34450db45e073cd08eb007dfcd89.addTo(map_c88592df03909d4e4df20429874fbb47);
+        
+    
+        function geo_json_b1e5da947f2dea99f6519c1386ed815b_styler(feature) {
+            switch(feature.properties.group_index) {
+                default:
+                    return {"color": "#a6d96a", "fillColor": "#a6d96a", "fillOpacity": 0.4, "weight": 1};
+            }
+        }
+
+        function geo_json_b1e5da947f2dea99f6519c1386ed815b_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_b1e5da947f2dea99f6519c1386ed815b = L.geoJson(null, {
+                onEachFeature: geo_json_b1e5da947f2dea99f6519c1386ed815b_onEachFeature,
+            
+                style: geo_json_b1e5da947f2dea99f6519c1386ed815b_styler,
+            ...{
+}
+        });
+
+        function geo_json_b1e5da947f2dea99f6519c1386ed815b_add (data) {
+            geo_json_b1e5da947f2dea99f6519c1386ed815b
+                .addData(data);
+        }
+            geo_json_b1e5da947f2dea99f6519c1386ed815b_add({"features": [{"geometry": {"coordinates": [[[106.822196, -6.172165], [106.822619, -6.172867], [106.823356, -6.174669], [106.823159, -6.179515], [106.823174, -6.180344], [106.823245, -6.180412], [106.823285, -6.180441], [106.823396, -6.180499], [106.826094, -6.180811], [106.827079, -6.180774], [106.827151, -6.180772], [106.831287, -6.180047], [106.831429, -6.179914], [106.831587, -6.179322], [106.831594, -6.17471], [106.831509, -6.17436], [106.830265, -6.16951], [106.829917, -6.16942], [106.827528, -6.169212], [106.827168, -6.169193], [106.823695, -6.170055], [106.822584, -6.170852], [106.822214, -6.171805], [106.822196, -6.172165]]], "type": "Polygon"}, "properties": {"area": 1117285.13, "center": [106.8271727, -6.1752977], "group_index": 0, "value": 600.0}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_b1e5da947f2dea99f6519c1386ed815b.bindTooltip(
+                `<div>
+                     10.0 menit dari titik pusat
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_b1e5da947f2dea99f6519c1386ed815b.addTo(map_c88592df03909d4e4df20429874fbb47);
+        
+    
+        function geo_json_f11392085ef8d41da4e6e9f519bdff68_styler(feature) {
+            switch(feature.properties.group_index) {
+                default:
+                    return {"color": "#fdae61", "fillColor": "#fdae61", "fillOpacity": 0.4, "weight": 1};
+            }
+        }
+
+        function geo_json_f11392085ef8d41da4e6e9f519bdff68_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_f11392085ef8d41da4e6e9f519bdff68 = L.geoJson(null, {
+                onEachFeature: geo_json_f11392085ef8d41da4e6e9f519bdff68_onEachFeature,
+            
+                style: geo_json_f11392085ef8d41da4e6e9f519bdff68_styler,
+            ...{
+}
+        });
+
+        function geo_json_f11392085ef8d41da4e6e9f519bdff68_add (data) {
+            geo_json_f11392085ef8d41da4e6e9f519bdff68
+                .addData(data);
+        }
+            geo_json_f11392085ef8d41da4e6e9f519bdff68_add({"features": [{"geometry": {"coordinates": [[[106.820124, -6.171874], [106.820577, -6.172825], [106.820674, -6.172994], [106.82112, -6.173872], [106.820352, -6.179303], [106.820028, -6.180302], [106.81991, -6.180642], [106.822689, -6.183466], [106.822769, -6.183548], [106.823014, -6.183657], [106.823373, -6.183632], [106.824826, -6.182761], [106.829098, -6.180652], [106.832931, -6.182817], [106.833162, -6.182801], [106.833314, -6.182743], [106.833542, -6.182464], [106.835125, -6.179139], [106.8351, -6.17878], [106.834279, -6.173116], [106.834248, -6.173], [106.833527, -6.171079], [106.832149, -6.167588], [106.831902, -6.167326], [106.82706, -6.166326], [106.826705, -6.166271], [106.824725, -6.166668], [106.82103, -6.167832], [106.820859, -6.168012], [106.819639, -6.170485], [106.819507, -6.17082], [106.820124, -6.171874]]], "type": "Polygon"}, "properties": {"area": 2537758.68, "center": [106.8271727, -6.1752977], "group_index": 0, "value": 900.0}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_f11392085ef8d41da4e6e9f519bdff68.bindTooltip(
+                `<div>
+                     15.0 menit dari titik pusat
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_f11392085ef8d41da4e6e9f519bdff68.addTo(map_c88592df03909d4e4df20429874fbb47);
+        
+    
+            var marker_85fb02f4ff3e5dcc29853e7d38af8da8 = L.marker(
+                [-6.175392, 106.827153],
+                {
+}
+            ).addTo(map_c88592df03909d4e4df20429874fbb47);
+        
+    
+            marker_85fb02f4ff3e5dcc29853e7d38af8da8.bindTooltip(
+                `<div>
+                     Titik Pusat
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_35b2b2934ff6c9f059abf7990976209e_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_718c220831cf309ce6c2e42c204486ac,
+                },
+                overlays :  {
+                    "5.0 menit" : geo_json_e7db34450db45e073cd08eb007dfcd89,
+                    "10.0 menit" : geo_json_b1e5da947f2dea99f6519c1386ed815b,
+                    "15.0 menit" : geo_json_f11392085ef8d41da4e6e9f519bdff68,
+                },
+            };
+            let layer_control_35b2b2934ff6c9f059abf7990976209e = L.control.layers(
+                layer_control_35b2b2934ff6c9f059abf7990976209e_layers.base_layers,
+                layer_control_35b2b2934ff6c9f059abf7990976209e_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_c88592df03909d4e4df20429874fbb47);
+
+        
+</script>
+</html>

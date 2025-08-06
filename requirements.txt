@@ -1,0 +1,6 @@
+streamlit>=1.35.0
+folium>=0.14.0
+streamlit-folium>=0.18.0
+geopandas>=0.13.0
+shapely>=2.0
+openrouteservice>=2.3.0
